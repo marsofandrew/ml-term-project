@@ -1,0 +1,94 @@
+Small DATASET:
+
+Без кросс-валидации
+
+variant epoch = 30; accuracy = 57.91037368774414; variant = t1
+variant epoch = 40; accuracy = -0.48755645751953125; variant = t1
+variant epoch = 30; accuracy = 69.92033386230469; variant = t0
+variant epoch = 40; accuracy = 73.49775695800781; variant = t0
+variant epoch = 30; accuracy = -15307.9716796875; variant = t2
+variant epoch = 40; accuracy = 46.369449615478516; variant = t2
+variant epoch = 30; accuracy = 66.88463973999023; variant = t3
+variant epoch = 40; accuracy = 63.62721252441406; variant = t3
+variant epoch = 30; accuracy = 65.7660140991211; variant = td2
+variant epoch = 40; accuracy = 36.97735595703125; variant = td2
+variant epoch = 30; accuracy = 65.15083312988281; variant = td3
+variant epoch = 40; accuracy = 64.8237533569336; variant = td3
+
+
+variant epoch = 50; accuracy = 48.63188552856445; variant = t1
+variant epoch = 50; accuracy = 65.76241302490234; variant = t0
+variant epoch = 50; accuracy = 67.65091323852539; variant = t2
+variant epoch = 50; accuracy = 74.4963607788086; variant = t3
+variant epoch = 50; accuracy = 60.36796951293945; variant = td2
+variant epoch = 50; accuracy = 64.27837753295898; variant = td3
+
+variant epoch = 60; accuracy = 24.91271209716797; variant = t1
+variant epoch = 60; accuracy = 64.22936248779297; variant = t0
+variant epoch = 60; accuracy = 70.328125; variant = t2
+variant epoch = 60; accuracy = 74.68937683105469; variant = t3
+variant epoch = 60; accuracy = 66.39911270141602; variant = td2
+variant epoch = 60; accuracy = 65.14591217041016; variant = td3
+
+variant epoch = 70; accuracy = 74.84956550598145; variant = t1
+variant epoch = 70; accuracy = 68.54864692687988; variant = t0
+variant epoch = 70; accuracy = 60.649471282958984; variant = t2
+variant epoch = 70; accuracy = 74.94011878967285; variant = t3
+variant epoch = 70; accuracy = 60.99812316894531; variant = td2
+variant epoch = 70; accuracy = 67.34393692016602; variant = td3
+
+variant epoch = 80; accuracy = 41.76047897338867; variant = t1
+variant epoch = 80; accuracy = 65.36710357666016; variant = t0
+variant epoch = 80; accuracy = 32.06346893310547; variant = t2
+variant epoch = 80; accuracy = 63.95646667480469; variant = t3
+variant epoch = 80; accuracy = 63.80359649658203; variant = td2
+variant epoch = 80; accuracy = 65.60268020629883; variant = td3
+
+
+variant epoch = 90; accuracy = 35.95245361328125; variant = t1
+variant epoch = 90; accuracy = 70.5750789642334; variant = t0
+variant epoch = 90; accuracy = 76.2459487915039; variant = t2
+variant epoch = 90; accuracy = 74.45353126525879; variant = t3
+variant epoch = 90; accuracy = 66.09645462036133; variant = td2
+variant epoch = 90; accuracy = 54.59691619873047; variant = td3
+
+Рассмотрим резульаьы с точки зрения эпох и точности.
+
+Минимальное требование к отбору - точность не менее 70%
+Варианты td2 и td3 ни разу не показали точности 70% и выше.
+
+Проведем кросс валидацию, 5 погонов для вариата [t1, 30], [t1, 70]
+variant epoch = 30; accuracy = 47.195200729370114; variant = t1, avg for 5 -> использовать этот вариант не имеет смысла
+Проведем тестирование вариантов t0, t2, t3 на 100 прогонах (дважды)
+variant epoch = 70; accuracy = -1831.4277988433837; variant = t1
+
+variant epoch = 100; accuracy = 75.73140048980713; variant = t2
+variant epoch = 100; accuracy = 66.2553939819336; variant = t0
+variant epoch = 100; accuracy = -2698466.5873937607; variant = t3
+
+
+Для тестирования на "больших" данных отберем 2 варианта: [t3, 70], [t2, 90]
+
+
+variant epoch = 20; accuracy = 74.35514068603516; variant = t0
+variant epoch = 20; accuracy = 70.85189056396484; variant = td0
+variant epoch = 20; accuracy = 61.90770721435547; variant = td2
+variant epoch = 20; accuracy = -16139.9541015625; variant = t2
+variant epoch = 10; accuracy = 68.3721752166748; variant = t2
+variant epoch = 10; accuracy = 60.180335998535156; variant = td3
+
+variant epoch = 40; accuracy = 79.60494995117188; variant = td21
+variant epoch = 20; accuracy = 77.42428016662598; variant = td21
+variant epoch = 50; accuracy = -16.0108642578125; variant = td21
+
+variant epoch = 40; accuracy = 73.95641326904297; variant = t0
+variant epoch = 40; accuracy = 60.33477020263672; variant = td0
+
+Для 1 дня:
+
+variant epoch = 20; accuracy = 90.47434520721436; variant = td0
+variant epoch = 20; accuracy = 89.51081085205078; variant = t0
+variant epoch = 20; accuracy = 87.94113063812256; variant = td21
+
+variant epoch = 40; accuracy = 94.16529989242554; variant = td21
+variant epoch = 40; accuracy = 89.1567211151123; variant = t0
